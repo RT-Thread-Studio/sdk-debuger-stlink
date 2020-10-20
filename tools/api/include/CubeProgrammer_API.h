@@ -454,7 +454,8 @@ typedef struct generalInf
     char cpu[20];                   /**< Cortex CPU. */
     char name[100];                 /**< Device name. */
     char series[100];               /**< Device serie. */
-    char description[100];          /**< Take notice. */
+    char description[150];          /**< Take notice. */
+    char revisionId[100];           /**< Revision ID. */
 }generalInf ;
 
 
