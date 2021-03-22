@@ -471,6 +471,17 @@
 										<Val value="0x1">after boot loading, user sectors swapped</Val>
 									</Values>
 								</Bit>
+								<Bit>
+									<Name>IO_HSLV</Name>
+									<Description> I/O high-speed at low-voltage configuration bit. This bit indicates that the product operates below 2.5 V</Description>
+									<BitOffset>0x1D</BitOffset>
+									<BitWidth>0x1</BitWidth>
+									<Access>R</Access>
+									<Values>
+										<Val value="0x0">Product working in the full voltage range, I/O speed optimization at low-voltage disabled</Val>
+										<Val value="0x1">Product operating below 2.5 V, I/O speed optimization at low-voltage feature allowed</Val>
+									</Values>
+								</Bit>
 							</AssignedBits>
 						</Field>
 						<Field>
@@ -551,6 +562,17 @@
 									<Values>
 										<Val value="0x0">Security feature disabled</Val>
 										<Val value="0x1">Security feature enabled</Val>
+									</Values>
+								</Bit>
+								<Bit>
+									<Name>IO_HSLV</Name>
+									<Description> I/O high-speed at low-voltage configuration bit. This bit indicates that the product operates below 2.5 V</Description>
+									<BitOffset>0x1D</BitOffset>
+									<BitWidth>0x1</BitWidth>
+									<Access>W</Access>
+									<Values>
+										<Val value="0x0">Product working in the full voltage range, I/O speed optimization at low-voltage disabled</Val>
+										<Val value="0x1">Product operating below 2.5 V, I/O speed optimization at low-voltage feature allowed</Val>
 									</Values>
 								</Bit>
 								<Bit config="0,1,4,5">

@@ -452,6 +452,42 @@
 					<Category>
 						<Name>Secure Protection</Name>
 						<Field>
+							<Parameters address="0x5200201C" name="FOPTSR_CUR" size="0x4"/>
+							<AssignedBits>
+								<Bit config="0">
+									<Name>ST_RAM_SIZE</Name>
+									<Description/>
+									<BitOffset>0x13</BitOffset>
+									<BitWidth>0x2</BitWidth>
+									<Access>R</Access>
+									<Values>
+										<Val value="0x0">2  KB reserved to ST code</Val>
+										<Val value="0x1">4  KB reserved to ST code</Val>
+										<Val value="0x2">8  KB reserved to ST code</Val>
+										<Val value="0x3">16 KB reserved to ST code</Val>
+									</Values>
+								</Bit>
+							</AssignedBits>
+						</Field>
+						<Field>
+							<Parameters address="0x52002020" name="FOPTSR_PRG" size="0x4"/>
+							<AssignedBits>
+								<Bit config="0">
+									<Name>ST_RAM_SIZE</Name>
+									<Description/>
+									<BitOffset>0x13</BitOffset>
+									<BitWidth>0x2</BitWidth>
+									<Access>W</Access>
+									<Values>
+										<Val value="0x0">2  KB reserved to ST code</Val>
+										<Val value="0x1">4  KB reserved to ST code</Val>
+										<Val value="0x2">8  KB reserved to ST code</Val>
+										<Val value="0x3">16 KB reserved to ST code</Val>
+									</Values>
+								</Bit>
+							</AssignedBits>
+						</Field>
+						<Field>
 							<Parameters address="0x52002030" name="FLASH_SCAR_CUR" size="0x4"/>
 							<AssignedBits>
 								<Bit config="0">
@@ -511,45 +547,6 @@
 									<Values>
 										<Val value="0x0">Flash secure area is kept when RDP level regression (change from level 1 to 0) occurs</Val>
 										<Val value="0x1">Flash secure area is erased when RDP level regression (change from level 1 to 0) occurs</Val>
-									</Values>
-								</Bit>
-							</AssignedBits>
-						</Field>
-					</Category>
-					<Category>
-						<Name>DTCM RAM Protection</Name>
-						<Field>
-							<Parameters address="0x5200201C" name="FOPTSR_CUR" size="0x4"/>
-							<AssignedBits>
-								<Bit config="0">
-									<Name>ST_RAM_SIZE</Name>
-									<Description/>
-									<BitOffset>0x13</BitOffset>
-									<BitWidth>0x2</BitWidth>
-									<Access>R</Access>
-									<Values>
-										<Val value="0x0">2  KB reserved to ST code</Val>
-										<Val value="0x1">4  KB reserved to ST code</Val>
-										<Val value="0x2">8  KB reserved to ST code</Val>
-										<Val value="0x3">16 KB reserved to ST code</Val>
-									</Values>
-								</Bit>
-							</AssignedBits>
-						</Field>
-						<Field>
-							<Parameters address="0x52002020" name="FOPTSR_PRG" size="0x4"/>
-							<AssignedBits>
-								<Bit config="0">
-									<Name>ST_RAM_SIZE</Name>
-									<Description/>
-									<BitOffset>0x13</BitOffset>
-									<BitWidth>0x2</BitWidth>
-									<Access>W</Access>
-									<Values>
-										<Val value="0x0">2  KB reserved to ST code</Val>
-										<Val value="0x1">4  KB reserved to ST code</Val>
-										<Val value="0x2">8  KB reserved to ST code</Val>
-										<Val value="0x3">16 KB reserved to ST code</Val>
 									</Values>
 								</Bit>
 							</AssignedBits>

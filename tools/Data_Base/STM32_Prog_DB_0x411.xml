@@ -40,7 +40,7 @@
 				<Name>Embedded Flash</Name>
 				<Type>Storage</Type>
 				<Description>The Flash memory interface manages CPU AHB I-Code and D-Code accesses to the Flash memory. It implements the erase and program Flash memory operations and the read and write protection mechanisms</Description>
-				<ErasedValue>0x00</ErasedValue>
+				<ErasedValue>0xFF</ErasedValue>
 				<Access>RWE</Access>
 				<FlashSize address="0x1FFF7A22" default="0x100000"/>
 				<!-- 1024KB Single Bank -->

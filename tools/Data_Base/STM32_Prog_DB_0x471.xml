@@ -40,22 +40,22 @@
 					<DBANK reference="0x1"> <ReadRegister address="0x40022020" mask="0x400000" value="0x400000"/> </DBANK>
 				</Configuration>
 				<Configuration number="0x6">
-					<flashSize> <!-- 512K --><ReadRegister address="0x1FFF75E0" mask="0xFFFF" value="0x400"/> </flashSize>
+					<flashSize> <!-- 512K --><ReadRegister address="0x1FFF75E0" mask="0xFFFF" value="0x200"/> </flashSize>
 					<DB1M reference="0x0"> <ReadRegister address="0x40022020" mask="0x200000" value="0x0"/> </DB1M>
 					<DBANK reference="0x0"> <ReadRegister address="0x40022020" mask="0x400000" value="0x0"/> </DBANK>
 				</Configuration>
 				<Configuration number="0x7">
-					<flashSize> <!-- 512K --><ReadRegister address="0x1FFF75E0" mask="0xFFFF" value="0x400"/> </flashSize>
+					<flashSize> <!-- 512K --><ReadRegister address="0x1FFF75E0" mask="0xFFFF" value="0x200"/> </flashSize>
 					<DB1M reference="0x0"> <ReadRegister address="0x40022020" mask="0x200000" value="0x0"/> </DB1M>
 					<DBANK reference="0x1"> <ReadRegister address="0x40022020" mask="0x400000" value="0x400000"/> </DBANK>
 				</Configuration>
 				<Configuration number="0x8">
-					<flashSize> <!-- 512K --><ReadRegister address="0x1FFF75E0" mask="0xFFFF" value="0x400"/> </flashSize>
+					<flashSize> <!-- 512K --><ReadRegister address="0x1FFF75E0" mask="0xFFFF" value="0x200"/> </flashSize>
 					<DB1M reference="0x1"> <ReadRegister address="0x40022020" mask="0x200000" value="0x200000"/> </DB1M>
 					<DBANK reference="0x1"> <ReadRegister address="0x40022020" mask="0x400000" value="0x400000"/> </DBANK>
 				</Configuration>
 				<Configuration number="0x9">
-					<flashSize> <!-- 512K --><ReadRegister address="0x1FFF75E0" mask="0xFFFF" value="0x400"/> </flashSize>
+					<flashSize> <!-- 512K --><ReadRegister address="0x1FFF75E0" mask="0xFFFF" value="0x200"/> </flashSize>
 					<DB1M reference="0x1"> <ReadRegister address="0x40022020" mask="0x200000" value="0x200000"/> </DB1M>
 					<DBANK reference="0x0"> <ReadRegister address="0x40022020" mask="0x400000" value="0x0"/> </DBANK>
 				</Configuration>

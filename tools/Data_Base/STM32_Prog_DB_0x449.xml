@@ -16,6 +16,11 @@
 						<ReadRegister address="0x1FF0F442" mask="0x40" value="0x00"/>
 					</RomLess>
 				</Configuration>
+				<Configuration number="0x0"> <!-- ROM Die -->
+					<RomLess>
+						<ReadRegister address="0x1FF0F442" mask="0xFFFFFFFF" value="0xFFFFFFFF"/>
+					</RomLess>
+				</Configuration>
 				<Configuration number="0x1"> <!-- RomLess Die -->
 					<RomLess>
 						<ReadRegister address="0x1FF0F442" mask="0x40" value="0x40"/>

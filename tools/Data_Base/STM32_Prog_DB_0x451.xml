@@ -11,17 +11,55 @@
 		<Configurations>
 			<!-- JTAG_SWD Interface -->
 			<Interface name="JTAG_SWD">
-				<Configuration number="0x0"> <!-- 2MB Single Bank-->
-					<DualBank reference="0x1">
+				<!-- 2MB Single Bank-->
+				<Configuration number="0x0"> 
+					<DualBank>
 						<ReadRegister address="0x40023C14" mask="0x20000000" value="0x20000000"/>
 					</DualBank>
+					<FlashSize>
+						<ReadRegister address="0x1FF0F442" mask="0x0000FFFF" value="0x0800"/>
+					</FlashSize>
 				</Configuration>
-				<Configuration number="0x1"> <!-- 2MB Dual Bank-->
-					<DualBank reference="0x0">
+				<!-- 2MB Dual Bank-->
+				<Configuration number="0x1"> 
+					<DualBank>
 						<ReadRegister address="0x40023C14" mask="0x20000000" value="0x0"/>
 					</DualBank>
+					<FlashSize>
+						<ReadRegister address="0x1FF0F442" mask="0x0000FFFF" value="0x0800"/>
+					</FlashSize>
 				</Configuration>
-			</Interface>		
+				<!-- 1MB Single Bank-->
+				<Configuration number="0x2"> 
+					<DualBank>
+						<ReadRegister address="0x40023C14" mask="0x20000000" value="0x20000000"/>
+					</DualBank>
+					<FlashSize>
+						<ReadRegister address="0x1FF0F442" mask="0x0000FFFF" value="0x0400"/>
+					</FlashSize>
+				</Configuration>
+				<!-- 1MB Dual Bank-->
+				<Configuration number="0x3"> 
+					<DualBank>
+						<ReadRegister address="0x40023C14" mask="0x20000000" value="0x0"/>
+					</DualBank>
+					<FlashSize>
+						<ReadRegister address="0x1FF0F442" mask="0x0000FFFF" value="0x0400"/>
+					</FlashSize>
+				</Configuration>
+				<!-- Dummy Config Dual bank-->
+				<Configuration number="0x4">
+					<DualBank>
+						<ReadRegister address="0x40023C14" mask="0x20000000" value="0x00000000"/>
+					</DualBank>
+				</Configuration>
+				<!-- Dummy Config-->				
+				<Configuration number="0x5">
+					<DualBank>
+						<ReadRegister address="0x40023C14" mask="0x00000000" value="0x00000000"/>
+					</DualBank>
+				</Configuration>					
+			</Interface>
 			<!-- Bootloader Interface -->
 			<Interface name="Bootloader">
 				<Configuration number="0x0"> <!-- 2MB Single Bank-->
@@ -66,7 +104,7 @@
 				<Access>RWE</Access>
 				<FlashSize address="0x1FF0F442" default="0x200000"/>
 				<!-- 2MB Single Bank -->
-				<Configuration config="0">
+				<Configuration config="0,5">
 					<Parameters address="0x08000000" name=" 2 Mbytes single bank Embedded Flash" size="0x200000"/>
 					<Description/>
 					<Organization>Single</Organization>
@@ -84,7 +122,7 @@
 					</Bank>
 				</Configuration>
 				<!-- 2MB Dual Bank -->
-				<Configuration config="1">
+				<Configuration config="1,4">
 					<Parameters address="0x08000000" name=" 2 Mbytes dual bank Embedded Flash" size="0x200000"/>
 					<Description/>
 					<Organization>Dual</Organization>
@@ -112,6 +150,53 @@
 						</Field>
 					</Bank>
 				</Configuration>
+				<!-- 1MB Single Bank -->
+				<Configuration config="2">
+					<Parameters address="0x08000000" name=" 1 Mbyte single bank Embedded Flash" size="0x100000"/>
+					<Description/>
+					<Organization>Single</Organization>
+					<Allignement>0x20</Allignement>
+					<Bank name="Bank 1">
+						<Field>
+							<Parameters address="0x08000000" name="sector0" occurence="0x4" size="0x8000"/>
+						</Field>
+						<Field>
+							<Parameters address="0x08020000" name="sector4" occurence="0x1" size="0x20000"/>
+						</Field>
+						<Field>
+							<Parameters address="0x08040000" name="sector5" occurence="0x3" size="0x40000"/>
+						</Field>
+					</Bank>
+				</Configuration>
+				<!-- 1MB Dual Bank -->
+				<Configuration config="3">
+					<Parameters address="0x08000000" name=" 1 Mbyte dual bank Embedded Flash" size="0x100000"/>
+					<Description/>
+					<Organization>Dual</Organization>
+					<Allignement>0x10</Allignement>
+					<Bank name="Bank 1">
+						<Field>
+							<Parameters address="0x08000000" name="sector0" occurence="0x4" size="0x4000"/>
+						</Field>
+						<Field>
+							<Parameters address="0x08010000" name="sector4" occurence="0x1" size="0x10000"/>
+						</Field>
+						<Field>
+							<Parameters address="0x08020000" name="sector5" occurence="0x3" size="0x20000"/>
+						</Field>
+					</Bank>
+					<Bank name="Bank 2">
+						<Field>
+							<Parameters address="0x08080000 " name="sector12" occurence="0x4" size="0x4000"/>
+						</Field>
+						<Field>
+							<Parameters address="0x08090000" name="sector16" occurence="0x1" size="0x10000"/>
+						</Field>
+						<Field>
+							<Parameters address="0x080A0000" name="sector17" occurence="0x3" size="0x20000"/>
+						</Field>
+					</Bank>
+				</Configuration>
 			</Peripheral>
 			<!-- ITCM FLASH -->
 			<Peripheral>
@@ -121,7 +206,7 @@
 				<ErasedValue>0xFF</ErasedValue>
 				<Access>RWE</Access>
 				<!-- 2MB Single Bank -->
-				<Configuration config="0">
+				<Configuration config="0,5">
 					<Parameters address="0x00200000" name=" 2 Mbytes single bank Embedded Flash" size="0x200000"/>
 					<Description/>
 					<Organization>Single</Organization>
@@ -139,7 +224,7 @@
 					</Bank>
 				</Configuration>
 				<!-- 2MB Dual Bank -->
-				<Configuration config="1">
+				<Configuration config="1,4">
 					<Parameters address="0x00200000" name=" 2 Mbytes dual bank Embedded Flash" size="0x200000"/>
 					<Description/>
 					<Organization>Dual</Organization>
@@ -177,13 +262,13 @@
 				<Access>RW</Access>
 				<!-- 1 KBytes single bank -->
 				<Configuration>
-					<Parameters address="0x1FF0F000" name=" 1 KBytes Data OTP" size="0x400"/>
+					<Parameters address="0x1FF0F000" name=" 1 KBytes Data OTP" size="0x480"/>
 					<Description/>
 					<Organization>Single</Organization>
 					<Allignement>0x4</Allignement>
 					<Bank name="OTP">
 						<Field>
-							<Parameters address="0x1FF0F000" name="OTP" occurence="0x1" size="0x400"/>
+							<Parameters address="0x1FF0F000" name="OTP" occurence="0x1" size="0x480"/>
 						</Field>
 					</Bank>
 				</Configuration>
@@ -295,7 +380,7 @@
 										<Val value="0x1">Flash in single bank with 256 bits read access</Val>
 									</Values>
 								</Bit>
-								<Bit config="1">
+								<Bit config="1,4">
 									<Name>nDBOOT</Name>
 									<Description/>
 									<BitOffset>0x1C</BitOffset>
@@ -382,7 +467,7 @@
 						<Field>
 							<Parameters address="0x40023C14" name="FLASH_OPTCR" size="0x4"/>
 							<AssignedBits>
-								<Bit config="0">
+								<Bit config="0,2,5">
 									<Name>nWRP0</Name>
 									<Description/>
 									<BitOffset>0x10</BitOffset>
@@ -393,7 +478,7 @@
 										<Val value="0x1">Write protection not active on this sector</Val>
 									</Values>
 								</Bit>
-								<Bit config="1">
+								<Bit config="1,3,4">
 									<Name>nWRP0</Name>
 									<Description/>
 									<BitOffset>0x10</BitOffset>
@@ -404,7 +489,7 @@
 										<Val value="0x1">Write protection not active on bank1 sector 2i, 2i+1</Val>
 									</Values>
 								</Bit>
-								<Bit config="1">
+								<Bit config="1,3,4">
 									<Name>nWRP6</Name>
 									<Description/>
 									<BitOffset>0x16</BitOffset>
