@@ -56,6 +56,26 @@
 					</Bank>
 				</Configuration>
 			</Peripheral>
+			<!-- OTP -->
+			<Peripheral>
+				<Name>OTP</Name>
+				<Type>Storage</Type>
+				<Description>The Data OTP memory block. It contains the one time programmable bits.</Description>
+				<ErasedValue>0xFF</ErasedValue>
+				<Access>RW</Access>
+				<!-- 1 KBytes single bank -->
+				<Configuration>
+					<Parameters address="0x1FFF7000" name=" 1 KBytes Data OTP" size="0x400"/>
+					<Description/>
+					<Organization>Single</Organization>
+					<Allignement>0x8</Allignement>
+					<Bank name="OTP">
+						<Field>
+							<Parameters address="0x1FFF7000" name="OTP" occurence="0x1" size="0x400"/>
+						</Field>
+					</Bank>
+				</Configuration>
+			</Peripheral>
 			<!-- Mirror Option Bytes -->
 			<Peripheral>
 				<Name>MirrorOptionBytes</Name>
@@ -526,7 +546,7 @@
 								</Bit>
 								<Bit>
 									<Name>SNBRSA</Name>
-									<Description>SNBRSA[4:0] contain the start address of the first 1 kB page of the secure &quot;non-backup&quot; SRAM1 area.</Description>
+									<Description>SNBRSA[4:0] contain the start address of the first 1 kB page of the secure &quot;non-backup&quot; SRAM1 area. To keep the tool working you have to set a value greater or equal to 0xC</Description>
 									<BitOffset>0x19</BitOffset>
 									<BitWidth>0x5</BitWidth>
 									<Access>RW</Access>
@@ -544,7 +564,7 @@
 								</Bit>
 								<Bit>
 									<Name>SBRSA</Name>
-									<Description>SBRSA[4:0] contain the start address of the first 1 kB page of the secure backup SRAM2 area.</Description>
+									<Description>SBRSA[4:0] contain the start address of the first 1 kB page of the secure backup SRAM2 area. To keep the tool working you have to set a value less than 0x15</Description>
 									<BitOffset>0x12</BitOffset>
 									<BitWidth>0x5</BitWidth>
 									<Access>RW</Access>

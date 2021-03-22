@@ -359,7 +359,7 @@
 									<Name>WRP1A_STRT</Name>
 									<Description>The address of the first page of the Bank 1 WRP first area</Description>
 									<BitOffset>0x0</BitOffset>
-									<BitWidth>0x7</BitWidth>
+									<BitWidth>0x6</BitWidth>
 									<Access>RW</Access>
 									<Equation multiplier="0x800" offset="0x08000000"/>
 								</Bit>
@@ -367,7 +367,7 @@
 									<Name>WRP1A_END</Name>
 									<Description>The address of the last page of the Bank 1 WRP first area</Description>
 									<BitOffset>0x10</BitOffset>
-									<BitWidth>0x7</BitWidth>
+									<BitWidth>0x6</BitWidth>
 									<Access>RW</Access>
 									<Equation multiplier="0x800" offset="0x08000000"/>
 								</Bit>
@@ -380,7 +380,7 @@
 									<Name>WRP1B_STRT</Name>
 									<Description>The address of the first page of the Bank 1 WRP second area</Description>
 									<BitOffset>0x0</BitOffset>
-									<BitWidth>0x7</BitWidth>
+									<BitWidth>0x6</BitWidth>
 									<Access>RW</Access>
 									<Equation multiplier="0x800" offset="0x08000000"/>
 								</Bit>
@@ -388,7 +388,7 @@
 									<Name>WRP1B_END</Name>
 									<Description>The address of the last page of the Bank 1 WRP second area</Description>
 									<BitOffset>0x10</BitOffset>
-									<BitWidth>0x7</BitWidth>
+									<BitWidth>0x6</BitWidth>
 									<Access>RW</Access>
 									<Equation multiplier="0x800" offset="0x08000000"/>
 								</Bit>
@@ -687,7 +687,7 @@
 									<Name>WRP1A_STRT</Name>
 									<Description>The address of the first page of the Bank 1 WRP first area</Description>
 									<BitOffset>0x0</BitOffset>
-									<BitWidth>0x7</BitWidth>
+									<BitWidth>0x6</BitWidth>
 									<Access>RW</Access>
 									<Equation multiplier="0x800" offset="0x08000000"/>
 								</Bit>
@@ -695,7 +695,7 @@
 									<Name>WRP1A_END</Name>
 									<Description>The address of the last page of the Bank 1 WRP first area</Description>
 									<BitOffset>0x10</BitOffset>
-									<BitWidth>0x7</BitWidth>
+									<BitWidth>0x6</BitWidth>
 									<Access>RW</Access>
 									<Equation multiplier="0x800" offset="0x08000000"/>
 								</Bit>
@@ -708,7 +708,7 @@
 									<Name>WRP1B_STRT</Name>
 									<Description>The address of the first page of the Bank 1 WRP second area</Description>
 									<BitOffset>0x0</BitOffset>
-									<BitWidth>0x7</BitWidth>
+									<BitWidth>0x6</BitWidth>
 									<Access>RW</Access>
 									<Equation multiplier="0x800" offset="0x08000000"/>
 								</Bit>
@@ -716,7 +716,7 @@
 									<Name>WRP1B_END</Name>
 									<Description>The address of the last page of the Bank 1 WRP second area</Description>
 									<BitOffset>0x10</BitOffset>
-									<BitWidth>0x7</BitWidth>
+									<BitWidth>0x6</BitWidth>
 									<Access>RW</Access>
 									<Equation multiplier="0x800" offset="0x08000000"/>
 								</Bit>

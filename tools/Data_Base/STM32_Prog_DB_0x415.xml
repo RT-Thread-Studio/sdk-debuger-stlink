@@ -10,7 +10,50 @@
 		<Description>ARM 32-bit Cortex-M4 based device</Description>
 		<Configurations>
 			<!-- JTAG_SWD Interface -->
-			<Interface name="JTAG_SWD"/>
+			<Interface name="JTAG_SWD">
+				<!-- 1MB Dual Bank-->
+				<Configuration number="0x0">
+					<FlashSize>
+						<ReadRegister address="0x1FFF75E0" mask="0x0000FFFF" value="0x0400"/>
+					</FlashSize>
+				</Configuration>
+				<!-- 512KB Dual Bank-->
+				<Configuration number="0x1"> <!-- DBANK=0x1-->
+					<DualBank>
+						<ReadRegister address="0x40022020" mask="0x200000" value="0x200000"/>
+					</DualBank>
+					<FlashSize>
+						<ReadRegister address="0x1FFF75E0" mask="0x0000FFFF" value="0x0200"/>
+					</FlashSize>
+				</Configuration>
+				<!-- 512KB Single Bank-->
+				<Configuration number="0x2"> <!-- DBANK=0x0-->
+					<DualBank>
+						<ReadRegister address="0x40022020" mask="0x200000" value="0x0"/>
+					</DualBank>
+					<FlashSize>
+						<ReadRegister address="0x1FFF75E0" mask="0x0000FFFF" value="0x0200"/>
+					</FlashSize>
+				</Configuration>
+				<!-- 256KB Dual Bank-->
+				<Configuration number="0x3"> <!-- DBANK=0x1-->
+					<DualBank>
+						<ReadRegister address="0x40022020" mask="0x200000" value="0x200000"/>
+					</DualBank>
+					<FlashSize>
+						<ReadRegister address="0x1FFF75E0" mask="0x0000FFFF" value="0x0100"/>
+					</FlashSize>
+				</Configuration>
+				<!-- 256KB Single Bank-->
+				<Configuration number="0x4"> <!-- DBANK=0x0-->
+					<DualBank>
+						<ReadRegister address="0x40022020" mask="0x200000" value="0x0"/>
+					</DualBank>
+					<FlashSize>
+						<ReadRegister address="0x1FFF75E0" mask="0x0000FFFF" value="0x0100"/>
+					</FlashSize>
+				</Configuration>								
+			</Interface>
 			<!-- Bootloader Interface -->
 			<Interface name="Bootloader"/>
 		</Configurations>
@@ -44,7 +87,7 @@
 				<Access>RWE</Access>
 				<FlashSize address="0x1FFF75E0" default="0x100000"/>
 				<!-- 1MB dual Bank -->
-				<Configuration>
+				<Configuration config="0">
 					<Parameters address="0x08000000" name=" 1 Mbyte Embedded Flash" size="0x100000"/>
 					<Description/>
 					<Organization>Dual</Organization>
@@ -57,6 +100,64 @@
 					<Bank name="Bank 2">
 						<Field>
 							<Parameters address="0x08080000" name="sector256" occurence="0x100" size="0x800"/>
+						</Field>
+					</Bank>
+				</Configuration>
+				<!-- 512KB dual Bank -->
+				<Configuration config="1">
+					<Parameters address="0x08000000" name=" 512 KBbyte Embedded Flash" size="0x80000"/>
+					<Description/>
+					<Organization>Dual</Organization>
+					<Allignement>0x8</Allignement>
+					<Bank name="Bank 1">
+						<Field>
+							<Parameters address="0x08000000" name="sector0" occurence="0x80" size="0x800"/>
+						</Field>
+					</Bank>
+					<Bank name="Bank 2">
+						<Field>
+							<Parameters address="0x08040000 " name="sector128" occurence="0x80" size="0x800"/>
+						</Field>
+					</Bank>
+				</Configuration>
+				<!-- 512KB Single Bank -->
+				<Configuration config="2">
+					<Parameters address="0x08000000" name=" 512 KBbyte Embedded Flash" size="0x80000"/>
+					<Description/>
+					<Organization>Single</Organization>
+					<Allignement>0x8</Allignement>
+					<Bank name="Bank 1">
+						<Field>
+							<Parameters address="0x08000000" name="sector0" occurence="0x80" size="0x1000"/>
+						</Field>
+					</Bank>
+				</Configuration>
+				<!-- 256KB dual Bank -->
+				<Configuration config="3">
+					<Parameters address="0x08000000" name=" 256 KBbyte Embedded Flash" size="0x40000"/>
+					<Description/>
+					<Organization>Dual</Organization>
+					<Allignement>0x8</Allignement>
+					<Bank name="Bank 1">
+						<Field>
+							<Parameters address="0x08000000" name="sector0" occurence="0x40" size="0x800"/>
+						</Field>
+					</Bank>
+					<Bank name="Bank 2">
+						<Field>
+							<Parameters address="0x08020000 " name="sector65" occurence="0x40" size="0x800"/>
+						</Field>
+					</Bank>
+				</Configuration>
+				<!-- 256KB Single Bank -->
+				<Configuration config="4">
+					<Parameters address="0x08000000" name=" 256 KBbyte Embedded Flash" size="0x40000"/>
+					<Description/>
+					<Organization>Single</Organization>
+					<Allignement>0x8</Allignement>
+					<Bank name="Bank 1">
+						<Field>
+							<Parameters address="0x08000000" name="sector0" occurence="0x80" size="0x800"/>
 						</Field>
 					</Bank>
 				</Configuration>
@@ -247,6 +348,17 @@
 									<Values>
 										<Val value="0x0">Dual-bank boot disable</Val>
 										<Val value="0x1">Dual-bank boot enable</Val>
+									</Values>
+								</Bit>
+								<Bit config="1,2,3,4">
+									<Name>DualBank</Name>
+									<Description/>
+									<BitOffset>0x15</BitOffset>
+									<BitWidth>0x1</BitWidth>
+									<Access>RW</Access>
+									<Values>
+										<Val value="0x0">256 KB/512 KB Single-bank Flash: Contiguous addresses in Bank 1</Val>
+										<Val value="0x1">256 KB/512 KB Dual-bank Flash</Val>
 									</Values>
 								</Bit>
 								<Bit>

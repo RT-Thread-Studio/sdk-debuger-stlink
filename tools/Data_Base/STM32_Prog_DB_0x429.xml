@@ -78,7 +78,7 @@
 					</Bank>
 					<Bank name="EEPROM1">
 						<Field>
-							<Parameters address="0x08080000" name="sector0" occurence="0x1" size="0x1000"/>
+							<Parameters address="0x08080000" name="sector65281" occurence="0x1" size="0x1000"/>
 						</Field>
 					</Bank>
 				</Configuration>

@@ -369,7 +369,7 @@
 									</Values>
 								</Bit>
 								<Bit>
-									<Name>FZ_IWDG_STOP</Name>
+									<Name>IWDG_FZ_STOP</Name>
 									<Description/>
 									<BitOffset>0x11</BitOffset>
 									<BitWidth>0x1</BitWidth>
@@ -380,7 +380,7 @@
 									</Values>
 								</Bit>
 								<Bit>
-									<Name>FZ_IWDG_SDBY</Name>
+									<Name>IWDG_FZ_SDBY</Name>
 									<Description/>
 									<BitOffset>0x12</BitOffset>
 									<BitWidth>0x1</BitWidth>

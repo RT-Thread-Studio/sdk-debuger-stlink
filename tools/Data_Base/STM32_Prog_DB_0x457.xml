@@ -78,7 +78,7 @@
 					</Bank>
 					<Bank name="EEPROM1">
 						<Field>
-							<Parameters address="0x08080000" name="sector0" occurence="0x1" size="0x200"/>
+							<Parameters address="0x08080000" name="sector65281" occurence="0x1" size="0x200"/>
 						</Field>
 					</Bank>
 				</Configuration>
@@ -236,8 +236,8 @@
 									<BitWidth>0x1</BitWidth>
 									<Access>R</Access>
 									<Values>
-										<Val value="0x0">Main Flash memory is selected as boot area</Val>
-										<Val value="0x1">nBOOT1=1 SysMem/nBOOT1=0 SRAM as boot area</Val>
+										<Val value="0x0">nBOOT1=1 SysMem/nBOOT1=0 SRAM as boot area</Val>
+										<Val value="0x1">Main Flash memory is selected as boot area</Val>
 									</Values>
 								</Bit>
 								<Bit>
