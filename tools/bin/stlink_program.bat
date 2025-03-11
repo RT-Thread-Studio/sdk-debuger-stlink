@@ -1,0 +1,2 @@
+cd /dD:\software\RT-ThreadStudio\repo\Extract\Debugger_Support_Packages\STMicroelectronics\ST-LINK_Debugger\1.6.0\tools\bin
+D:\software\RT-ThreadStudio\repo\Extract\Debugger_Support_Packages\STMicroelectronics\ST-LINK_Debugger\1.6.0\tools\bin\STM32_Programmer_CLI.exe -c port=SWD mode=NORMAL --extload D:\software\RT-ThreadStudio\workspace\art_pi2_blink_led\board\stldr\ART-Pi2_ST_winbond_64MB.stldr -d "D:\software\RT-ThreadStudio\workspace\art_pi2_blink_led\Debug\rtthread.elf" -hardRst -s

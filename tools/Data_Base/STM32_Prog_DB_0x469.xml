@@ -24,10 +24,10 @@
 			<!-- Bootloader Interface -->
 			<Interface name="Bootloader">
 				<Configuration number="0x0">	
-					<DBANK reference="0x0"> <ReadRegister address="0x1FFF7800" mask="0x10000" value="0x0"/> </DBANK>
+					<DBANK reference="0x0"> <ReadRegister address="0x1FFF7800" mask="0x400000" value="0x0"/> </DBANK>
 				</Configuration>
 				<Configuration number="0x1">	
-					<DBANK reference="0x1"> <ReadRegister address="0x1FFF7800" mask="0x10000" value="0x10000"/> </DBANK>
+					<DBANK reference="0x1"> <ReadRegister address="0x1FFF7800" mask="0x400000" value="0x400000"/> </DBANK>
 				</Configuration>
 				<Configuration number="0x2">	
 					<dummy> <ReadRegister address="0x20000000" mask="0" value="0"/> </dummy>
@@ -127,12 +127,12 @@
 					<Allignement>0x4</Allignement>
 					<Bank name="Bank 1">
 						<Field>
-							<Parameters address="0x1FFF7800" name="Bank1" occurence="0x1" size="0x24"/>
+							<Parameters address="0x1FFF7800" name="Bank1" occurence="0x1" size="0x30"/>
 						</Field>
 					</Bank>
 					<Bank name="Bank 2">
 						<Field>
-							<Parameters address="0x1FFFF808" name="Bank2" occurence="0x1" size="0x1C"/>
+							<Parameters address="0x1FFFF800" name="Bank2" occurence="0x1" size="0x30"/>
 						</Field>
 					</Bank>
 				</Configuration>

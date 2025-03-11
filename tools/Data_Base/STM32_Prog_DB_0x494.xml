@@ -5,7 +5,7 @@
 		<Vendor>STMicroelectronics</Vendor>
 		<Type>MCU</Type>
 		<CPU>Cortex-M0+/M4</CPU>
-		<Name>STM32WB15xx</Name>
+		<Name>STM32WB1xxx</Name>
 		<Series>STM32WB</Series>
 		<Description>ARM 32-bit Cortex-M0+ and ARM 32-bit Cortex-M4 dual core based device</Description>
 		<Configurations>
@@ -252,7 +252,7 @@
 									</Values>
 								</Bit>
 								<Bit>
-									<Name>IWGDSTDBY</Name>
+									<Name>IWDGSTDBY</Name>
 									<Description/>
 									<BitOffset>0x12</BitOffset>
 									<BitWidth>0x1</BitWidth>
@@ -363,7 +363,7 @@
 									<BitOffset>0x0</BitOffset>
 									<BitWidth>0x9</BitWidth>
 									<Access>RW</Access>
-									<Equation multiplier="0x400" offset="0x08000000"/>
+									<Equation multiplier="0x400" offset="0x08000400"/>
 								</Bit>
 								<Bit>
 									<Name>PCROP_RDP</Name>
@@ -400,7 +400,7 @@
 									<BitOffset>0x0</BitOffset>
 									<BitWidth>0x9</BitWidth>
 									<Access>RW</Access>
-									<Equation multiplier="0x400" offset="0x08000000"/>
+									<Equation multiplier="0x400" offset="0x08000400"/>
 								</Bit>
 							</AssignedBits>
 						</Field>
@@ -540,7 +540,7 @@
 									<BitOffset>0x19</BitOffset>
 									<BitWidth>0x2</BitWidth>
 									<Access>RW</Access>
-									<Equation multiplier="0x800" offset="0x2000BFFF"/>
+									<Equation multiplier="0x400" offset="0x20038000"/>
 								</Bit>
 								<Bit>
 									<Name>BRSD_A</Name>
@@ -559,7 +559,7 @@
 									<BitOffset>0x12</BitOffset>
 									<BitWidth>0x5</BitWidth>
 									<Access>RW</Access>
-									<Equation multiplier="0x800" offset="0x2000B000"/>
+									<Equation multiplier="0x400" offset="0x20030000"/>
 								</Bit>
 								<Bit>
 									<Name>SBRV</Name>
@@ -567,7 +567,7 @@
 									<BitOffset>0x0</BitOffset>
 									<BitWidth>0x11</BitWidth>
 									<Access>RW</Access>
-									<Equation multiplier="0x800" offset="0x08000000"/>
+									<Equation multiplier="0x000" offset="0x08000000"/>
 								</Bit>
 							</AssignedBits>
 						</Field>		
@@ -722,7 +722,7 @@
 									</Values>
 								</Bit>
 								<Bit>
-									<Name>IWGDSTDBY</Name>
+									<Name>IWDGSTDBY</Name>
 									<Description/>
 									<BitOffset>0x12</BitOffset>
 									<BitWidth>0x1</BitWidth>
@@ -886,7 +886,7 @@
 									<BitOffset>0x19</BitOffset>
 									<BitWidth>0x2</BitWidth>
 									<Access>RW</Access>
-									<Equation multiplier="0x800" offset="0x08000000"/>
+									<Equation multiplier="0x400" offset="0x20038000"/>
 								</Bit>
 								<Bit>
 									<Name>BRSD_A</Name>
@@ -905,7 +905,7 @@
 									<BitOffset>0x12</BitOffset>
 									<BitWidth>0x5</BitWidth>
 									<Access>RW</Access>
-									<Equation multiplier="0x800" offset="0x08000000"/>
+									<Equation multiplier="0x400" offset="0x20030000"/>
 								</Bit>
 								<Bit>
 									<Name>SBRV</Name>
@@ -913,7 +913,7 @@
 									<BitOffset>0x0</BitOffset>
 									<BitWidth>0x11</BitWidth>
 									<Access>RW</Access>
-									<Equation multiplier="0x800" offset="0x08000000"/>
+									<Equation multiplier="0x000" offset="0x08000000"/>
 								</Bit>
 							</AssignedBits>
 						</Field>
@@ -942,7 +942,7 @@
 									<BitOffset>0x0</BitOffset>
 									<BitWidth>0x9</BitWidth>
 									<Access>RW</Access>
-									<Equation multiplier="0x400" offset="0x08000000"/>
+									<Equation multiplier="0x400" offset="0x08000400"/>
 								</Bit>
 								<Bit>
 									<Name>PCROP_RDP</Name>
@@ -979,7 +979,7 @@
 									<BitOffset>0x0</BitOffset>
 									<BitWidth>0x9</BitWidth>
 									<Access>RW</Access>
-									<Equation multiplier="0x400" offset="0x08000000"/>
+									<Equation multiplier="0x400" offset="0x08000400"/>
 								</Bit>
 							</AssignedBits>
 						</Field>

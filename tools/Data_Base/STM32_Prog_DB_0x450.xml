@@ -148,6 +148,7 @@
 				<ErasedValue>0xFF</ErasedValue>
 				<Access>RWE</Access>
 				<FlashSize address="0x1FF1E880" default="0x200000"/>
+				<BootloaderVersion address="0x1FF1E7FE"/>
 				<!-- 2MB Dual Bank -->
 				<Configuration config="0,1,2,3">
 					<Parameters address="0x08000000" name="2 MBytes Dual Bank Embedded Flash" size="0x200000"/>
@@ -265,7 +266,7 @@
 						<Field>
 							<Parameters address="0x5200201C" name="FOPTSR_CUR" size="0x4"/>
 							<AssignedBits>
-								<Bit>
+								<!--Bit>
 									<Name>RSS1</Name>
 									<Description/>
 									<BitOffset>0x1A</BitOffset>
@@ -275,13 +276,13 @@
 										<Val value="0x0">No SFI process on going</Val>
 										<Val value="0x1">SFI process started</Val>
 									</Values>
-								</Bit>
+								</Bit-->
 							</AssignedBits>
 						</Field>
 						<Field>
 							<Parameters address="0x52002020" name="FOPTSR_PRG" size="0x4"/>
 							<AssignedBits>
-								<Bit>
+								<!--Bit>
 									<Name>RSS1</Name>
 									<Description/>
 									<BitOffset>0x1A</BitOffset>
@@ -291,7 +292,7 @@
 										<Val value="0x0">No SFI process on going</Val>
 										<Val value="0x1">SFI process started</Val>
 									</Values>
-								</Bit>
+								</Bit-->
 							</AssignedBits>
 						</Field>
 					</Category>
@@ -405,7 +406,7 @@
 										<Val value="0x1">Independent watchdog is running in STANDBY mode</Val>
 									</Values>
 								</Bit>
-								<Bit config="0,2">
+								<Bit config="0,2,4,6">
 									<Name>SECURITY</Name>
 									<Description/>
 									<BitOffset>0x15</BitOffset>
