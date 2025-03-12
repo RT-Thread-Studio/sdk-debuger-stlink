@@ -264,8 +264,8 @@
 									<BitWidth>0x1</BitWidth>
 									<Access>RW</Access>
 									<Values>
-										<Val value="0x0">SRAM2 parity check enable</Val>
-										<Val value="0x1">SRAM2 parity check disable</Val>
+										<Val value="0x0">SRAM parity check enable</Val>
+										<Val value="0x1">SRAM parity check disable</Val>
 									</Values>
 								</Bit>
 								<Bit>
@@ -626,8 +626,8 @@
 									<BitWidth>0x1</BitWidth>
 									<Access>RW</Access>
 									<Values>
-										<Val value="0x0">SRAM2 parity check enable</Val>
-										<Val value="0x1">SRAM2 parity check disable</Val>
+										<Val value="0x0">SRAM parity check enable</Val>
+										<Val value="0x1">SRAM parity check disable</Val>
 									</Values>
 								</Bit>
 								<Bit>

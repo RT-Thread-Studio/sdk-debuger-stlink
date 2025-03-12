@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SCHVerif.xsd">
+<Device>
+		<DeviceID>0x486</DeviceID>
+		<Vendor>STMicroelectronics</Vendor>
+		<Type>MCU</Type>
+		<CPU>Cortex-M55</CPU>
+		<Name>STM32N6xx</Name>
+		<Series>STM32N6</Series>
+		<Description>ARM 32-bit Cortex-M55 based device</Description>
+		<!-- Configurations List -->
+		<Configurations>
+			<Interface name="JTAG_SWD">
+				<Configuration number="0x0">
+					<ReadRegister address="0x0" mask="0x0" value="0x4"/>
+				</Configuration>
+			</Interface>
+		</Configurations>
+		<!-- Peripherals -->
+		<Peripherals>
+			<Peripheral>
+				<Name>Embedded SRAM</Name>
+				<Type>Storage</Type>
+				<Description/>
+				<ErasedValue>0xFF</ErasedValue>
+				<Access>RWE</Access>
+				<Configuration>
+					<Parameters address="0x28000000" name="SRAM" size="0x8000"/>
+					<Description/>
+					<Organization>Single</Organization>
+					<Bank>
+						<Field>
+							<Parameters address="0x28000000" name="SRAM" occurence="0x1" size="0x8000"/>
+						</Field>
+					</Bank>
+				</Configuration>
+			</Peripheral>
+		</Peripherals>
+	</Device>
+</Root>

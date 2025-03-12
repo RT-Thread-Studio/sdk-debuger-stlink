@@ -43,6 +43,7 @@
 				<ErasedValue>0x00</ErasedValue>
 				<Access>RWE</Access>
 				<FlashSize address="0x1FFF75E0" default="0x80000"/>
+				<BootloaderVersion address="0x1FFF6FFE"/>
 				<!-- 1024KB Single Bank -->
 				<Configuration>
 					<Parameters address="0x08000000" name=" 512 Kbytes Embedded Flash" size="0x80000"/>
@@ -251,7 +252,7 @@
 									</Values>
 								</Bit>
 								<Bit>
-									<Name>IWGDSTDBY</Name>
+									<Name>IWDGSTDBY</Name>
 									<Description/>
 									<BitOffset>0x12</BitOffset>
 									<BitWidth>0x1</BitWidth>
@@ -671,7 +672,7 @@
 									</Values>
 								</Bit>
 								<Bit>
-									<Name>IWGDSTDBY</Name>
+									<Name>IWDGSTDBY</Name>
 									<Description/>
 									<BitOffset>0x12</BitOffset>
 									<BitWidth>0x1</BitWidth>
